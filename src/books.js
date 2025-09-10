@@ -88,26 +88,25 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor(dictionaryExample) {
+function booksByAuthor(booksDictionary) {
   const result = [];
   const Arry = [];
 
 
   // Iterate through each author (key in dictionary)
-  for (const author in dictionary) {
-    const books = dictionary[author];
+  for (const author in booksDictionary) {
+    const books = booksDictionary[author];
+
     // Iterate through each book of that author
     for (const [title, pages] of books) {
+      console.log('adding book to restul.....');
+      
       result.push({
         title: title,
         pages: pages,
         author: author
       });
     }
-    Arry.push(result);
-    console.log(Arry);
-    //result.splice(0, result.length); // Clear the result array for the next author
-
   }
   return result;
 }
